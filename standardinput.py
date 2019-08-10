@@ -10,10 +10,7 @@
 # total = int(number) + int(number1)
 
 # print('The total addition value is', total)
-
-
-
-
+#-----------------------------------------
 number = input('Give me a number: ')
 number1 = input('Give me another number: ')
 
