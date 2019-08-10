@@ -1,4 +1,4 @@
 "hello" # 'hello'
 'hello' # 'hello'
-'don't' # error
-'don\'t' #escapes the second single quote mark
+'don't' #errors out as you can see
+'don\'t' #escapes the second single quote marks
