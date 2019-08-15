@@ -18,11 +18,13 @@ totalSum = 0
 while (True):
     val = input('Please add numbers or (press \'q\' when done) : ')
     if val == 'q':
-        return false
+        break
     else:
-        for number in numbers:
-            totalSum += numbers[number]
-            print ('Total', totalSum)        
         numbers.append(int(val))
+        print(numbers)
 
-print(numbers)
+for number in numbers:
+    totalSum += number
+
+totalSum = totalSum / len(numbers)
+print ('Total', totalSum)
