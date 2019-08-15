@@ -21,10 +21,10 @@ while (True):
         break
     else:
         numbers.append(int(val))
-        print(numbers)
+        print("Number accepted, continue adding or press Q to submit & quit")
 
 for number in numbers:
     totalSum += number
 
 totalSum = totalSum / len(numbers)
-print ('Total', totalSum)
+print ('Total average of your numbers is {0:.0f} '.format(totalSum))
