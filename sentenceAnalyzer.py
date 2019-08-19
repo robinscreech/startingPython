@@ -1,8 +1,7 @@
-sentence = input("Please enter a sentence : ")
+# sentence = input("Please enter a sentence : ")
+sentence = input("Please enter a sentence : ").lower()
 
-lower_sentence = sentence.lower()
-
-words = lower_sentence.split(" ")
+words = sentence.split(" ")
 
 char_count = {}
 
