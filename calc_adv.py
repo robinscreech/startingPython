@@ -1,24 +1,36 @@
 class Calc:
 
-    while(True):
-        getValue = input ("Please enter your numbers (q to quit):")
-
-        # there is an issue with this accepting an int, need to look
-        # into the right value to put here. 
-        list.append(int(getValue))
-
-        if getValue == "q":
-            print (list)
-            addition(list[0], list[1])
-            break
-        else:
-            getValue = input ("Please enter your numbers (q to quit):")
-
+    list = []
     def __init__(self, first, second, action):
         total = 0
-        list = []
 
 
     def addition(previousNum, currentNum):
         total = previousNum + currentNum
-        print (total)
+        print("Total : " + str(total))
+
+    def subtraction(previousNum, currentNum):
+        total = previousNum - currentNum
+        print("Total : " + str(total))
+
+    def division(previousNum, currentNum):
+        total = previousNum / currentNum
+        print("Total : " + str(total))
+
+    def multi(previousNum, currentNum):
+        total = previousNum * currentNum
+        print("Total : " + str(total))
+
+    getValue = input("Please enter your numbers (q to quit):")
+
+    sums = getValue.split(" ")
+    print(sums)
+
+    if sums[1] == "+":
+        addition(int(sums[0]), int(sums[2]))
+    elif sums[1] == "-":
+        subtraction(int(sums[0]), int(sums[2]))
+    elif sums[1] == "/":
+        division(int(sums[0]), int(sums[2]))
+    else:
+        multi(int(sums[0]), int(sums[2]))
