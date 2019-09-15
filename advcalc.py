@@ -1,9 +1,9 @@
 class Calc:
 
     history = []
+    firstInput = False
     def __init__(self, first, second, action):
-        total = 0
-
+        emptyVal = 0
 
     def doSum(previousNum, currentNum, operator):
         if operator == "+":
@@ -21,14 +21,20 @@ class Calc:
 
 
     while (True):
-        getValue = input("Please enter your numbers (q to quit):")
+        if firstInput == False:
+            getValue = input("Please enter your numbers (q to quit):")
+            inputVal = getValue.split(" ")
+            print("Your sum is :" + str(doSum(int(inputVal[0]),int(inputVal[2]),inputVal[1])))
+            history.append(doSum(int(inputVal[0]),int(inputVal[2]),inputVal[1]))
+            print(history)
+            firstInput = True
 
-        sums = getValue.split(" ")
+        else:
+            secondGetValue = input("Do some math with the last number (q to quit):")
+            secondSplit = secondGetValue.split(" ")
+            result = doSum(history[-1], int(secondSplit[1]), str(secondSplit[0]))
+            history.append(result)
+            print(history)
+            print("Your sum is : " + str(result))
 
-        print("Your sum is :" + str(doSum(int(sums[0]),int(sums[2]),sums[1])))
-
-        history.append(doSum(int(sums[0]),int(sums[2]),sums[1]))
-        print(history)
-
-        #if getValue == "q"
-        break
+        # break
