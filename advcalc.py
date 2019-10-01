@@ -44,5 +44,3 @@ class Calc:
             history.append(result)
             print(history)
             print("Your sum is : " + str(result))
-
-        # break
