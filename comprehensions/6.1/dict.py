@@ -8,4 +8,16 @@ for key, value in char_count.items():
     else:
         char_freq[key.lower()] = value
 
-print (char_freq)
+#print (char_freq)
+
+# var_name = {
+#     key : value
+#     for loop_var in collection
+# }
+
+char_freq = {
+    key.lower(): char_count.get(key.lower(), 0) + char_count.get(key.upper(), 0)
+    for key in char_count.keys()
+}
+
+print(char_freq)
